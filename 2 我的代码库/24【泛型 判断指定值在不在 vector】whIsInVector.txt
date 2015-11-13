@@ -1,0 +1,27 @@
+/* 
+* 
+* funtion: 判断特定值在 vector 里面是否存在
+* 
+* Date:2015-11-13
+* 
+*    Author: Bill Wang
+*/
+
+#pragma once
+
+#include <vector>
+
+//泛型函数：判断特定值在 vector 里面是否存在
+template <class Type>
+bool whIsInVector(const std::vector<Type> vec,Type value ) {
+
+	vector<Type>::iterator it;
+
+	if (it!=vec.end()){
+		//vec中存在value值
+		return true;
+	}else {
+		//vec中不存在value值
+		return false;
+	}
+}

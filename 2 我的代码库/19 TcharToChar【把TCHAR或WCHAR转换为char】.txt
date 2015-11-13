@@ -1,0 +1,12 @@
+// 把TCHAR *或WCHAR *转换为char *  
+char convertTemp3[256] = {0};  
+char* TcharToChar(TCHAR* str, int len)  
+{
+#ifdef _UNICODE   
+	memset(convertTemp3, 0, sizeof(convertTemp3));   
+	WideCharToMultiByte(CP_UTF8, 0, str, len, convertTemp3, 256, 0, 0);   
+	return convertTemp3;  
+#else   
+	return str;  
+#endif  
+}

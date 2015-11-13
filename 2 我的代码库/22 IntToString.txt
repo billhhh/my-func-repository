@@ -1,0 +1,10 @@
+#include <iostream> 
+#include <sstream> 
+#include <string>
+
+std::string whIntToString(int aa) {
+	std::stringstream ss;
+        ss<<aa;
+	std::string s1 = ss.str();
+	return s1;
+}
