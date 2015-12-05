@@ -1,0 +1,9 @@
+#include <stdlib.h>
+
+void showInBinary(int number) {
+
+	char string[100];
+
+	itoa(number, string, 2); 
+	printf("integer = %3d string = %s\n", number, string);
+}
