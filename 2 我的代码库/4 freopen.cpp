@@ -1,1 +1,0 @@
-freopen("f:\\output.txt", "w", stdout);
