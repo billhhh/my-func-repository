@@ -37,7 +37,7 @@ enum Path{
 
 typedef struct {
 
-	int ori; //Ô­Êı×Ö
+	int ori; //åŸæ•°å­—
 	int dp;
 	Path path;
 }Node;
@@ -48,10 +48,10 @@ int main()
 {
 	//freopen("input.txt", "r", stdin);
 
-	int n; //Èı½ÇĞÎµÄ²ãÊı
+	int n; //ä¸‰è§’å½¢çš„å±‚æ•°
 	cin >> n;
 
-	//1¡¢ÊäÈëÔ­¾ØÕó
+	//1ã€è¾“å…¥åŸçŸ©é˜µ
 	for (int i = 0; i < n; ++i) {
 
 		for (int j = 0; j <= i; ++j) {
@@ -62,14 +62,14 @@ int main()
 	}
 	cout << endl;
 
-	//2¡¢Éú³É¶¯¹é¾ØÕó
+	//2ã€ç”ŸæˆåŠ¨å½’çŸ©é˜µ
 	for (int i = n - 2; i >= 0; --i) {
 
 		for (int j = 0; j <= i; ++j) {
 
 			//node[i][j].dp += max(node[i + 1][j].dp, node[i + 1][j + 1].dp);
 
-			if (node[i + 1][j].dp > node[i + 1][j + 1].dp) { //×ó±ß¸ü´ó£¬¼ÓÉÏÈ¥
+			if (node[i + 1][j].dp > node[i + 1][j + 1].dp) { //å·¦è¾¹æ›´å¤§ï¼ŒåŠ ä¸Šå»
 
 				node[i][j].dp += node[i + 1][j].dp;
 				node[i][j].path = LEFT;
@@ -83,7 +83,7 @@ int main()
 		}
 	}
 
-	//3¡¢´òÓ¡½á¹ûÈı½ÇĞÎ
+	//3ã€æ‰“å°ç»“æœä¸‰è§’å½¢
 	for (int i = 0; i < n; ++i) {
 
 		for (int j = 0; j <= i; ++j) {
@@ -93,10 +93,10 @@ int main()
 		cout << endl;
 	}
 
-	//4¡¢´òÓ¡Â·¾¶
+	//4ã€æ‰“å°è·¯å¾„
 	cout << endl << "The route is:" << endl;
 	Node cur;
-	int col = 0; //ÁĞºÅ
+	int col = 0; //åˆ—å·
 	for (int i = 0; i < n; ++i) {
 
 		cur = node[i][col];
